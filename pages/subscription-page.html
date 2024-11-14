@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Page</title>
+    <link rel="stylesheet" href="subscription.css">
+</head>
+<body>
+
+    <div class="subscription-card">
+        <h2>Premium Plan</h2>
+        
+        <div class="price">
+            ₹2000.00 <small>/ month</small>
+        </div>
+        <p>Monthly Subscription - Auto-renews every month</p>
+        
+        <ul class="features">
+            <li>Unlock 25 Daily Searches</li>
+            <li>Increased Result Quantity and Quality</li>
+            <li>Access to Links</li>
+            <li>Advanced GPT Research Capabilities</li>
+            <li>Access to more Details of images</li>
+        </ul>
+        
+        <div class="offer-box">
+            <h3>Introductory Offer for New Users!</h3>
+            <ul>
+                <li>50% off for the first month</li>
+                <li>5 searches with links in the first month</li>
+                <li>10 extra free searches in the first month</li>
+            </ul>
+            <p><strong>After the first month, subscription will automatically convert to the regular Premium Plan with all features until cancelled or auto-renew is turned off.</strong></p>
+            <p>Eligibility determined by the Play Store</p>
+        </div>
+        
+        <p class="small-info">Experience all the premium features at an affordable price.</p>
+        
+        <button class="buy-now" id="buy-product">Buy Now</button>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        
+
+let stripe = Stripe(
+    "pk_test_51QKl45P1EZuSqfFt03Wq1QJgwSjElsuWWXUQub0wd9J8SK09hVgMaBCBOvyhhTkBT3UexMmdSh9XZmxL5EPL8hAK00w58Rpeo9"
+);
+
+document.getElementById('buy-product').addEventListener("click",function() {
+    stripe.redirectToCheckout({
+        lineItems: [
+            {
+                price:"price_1QKlroP1EZuSqfFtdXkK9DfM",
+                quantity:1,
+            },
+        ],
+        mode: "subscription",
+        successUrl:"https://www.google.com/",
+        cancelUrl: "https://www.twitter.com/",
+    }).then(function(result){
+        if (result.error) {
+                alert(result.error.message);
+            }
+    });
+})
+
+    </script>
+</body>
+</html>
