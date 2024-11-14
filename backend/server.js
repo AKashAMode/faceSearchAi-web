@@ -3,18 +3,17 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const app = express();
 
-// Middleware to parse JSON bodies
+
 app.use(bodyParser.json());
 
-// Serve static files like HTML, CSS, JS
-app.use(express.static('user-registration')); // 'user_registration' is where your register.html is
+app.use(express.static('user-registration')); 
 
-// MySQL connection setup
+
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // your MySQL username
-    password: 'AKash@123', // your MySQL password
-    database: 'user_database', // your database name
+    user: 'root', 
+    password: 'AKash@123',
+    database: 'user_database', 
 });
 
 db.connect((err) => {
@@ -25,7 +24,6 @@ db.connect((err) => {
     console.log('Connected to MySQL database');
 });
 
-// Handle registration POST request
 app.post('/register', (req, res) => {
     const { username, email, password } = req.body;
     const query = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
@@ -39,7 +37,7 @@ app.post('/register', (req, res) => {
     });
 });
 
-// Start the server
+
 const PORT = 3002;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

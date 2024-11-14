@@ -5,17 +5,16 @@
     font-family: Arial, sans-serif;
 }
 
-/* Background styling */
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #f09, #3023ae);
+    background:#36486b;
     color: #333;
 }
 
-/* Container for the form */
+
 .form-container {
     background: #fff;
     padding: 2rem;
@@ -26,13 +25,12 @@ body {
     text-align: center;
 }
 
-/* Header styling */
+
 h2 {
     margin-bottom: 1rem;
     color: #3023ae;
 }
 
-/* Label styling */
 label {
     display: block;
     margin-bottom: 0.5rem;
@@ -40,7 +38,7 @@ label {
     text-align: left;
 }
 
-/* Input styling */
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -53,13 +51,11 @@ input[type="password"] {
     transition: border-color 0.3s;
 }
 
-/* Input focus effect */
 input:focus {
     border-color: #3023ae;
     outline: none;
 }
 
-/* Button styling */
 button {
     width: 100%;
     padding: 0.75rem;
@@ -73,12 +69,11 @@ button {
     transition: background-color 0.3s;
 }
 
-/* Button hover effect */
+
 button:hover {
     background: #f09;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
     body {
         padding: 1rem;

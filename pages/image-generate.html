@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload with Background Video</title>
+    <link rel="stylesheet" href="./image-generate.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="../img/robo-face.mp4" type="video/mp4">
+           
+        </video>
+        
+        <div class="content">
+            <h1>Upload an Image</h1>
+            <input type="file" id="uploadInput" accept="image/*" multiple onchange="displayImages(event)">
+            <div class="image-display" id="imageDisplay">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function displayImages(event) {
+            const imageDisplay = document.getElementById('imageDisplay');
+            imageDisplay.innerHTML = ''; 
+
+            const files = event.target.files;
+            const maxImages = 5;
+            const defaultImages = [
+                '../img/photo-1.jpeg',
+                '../img/photo-2.jpeg',
+                '../img/photo-3.jpeg',
+                '../img/photo-4.jpeg',
+                '../img/photo-5.jpeg'
+            ];
+
+            let i = 0;
+            for (; i < Math.min(files.length, maxImages); i++) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(files[i]);
+                img.classList.add('preview-image');
+                imageDisplay.appendChild(img);
+            }
+
+            for (let j = i; j < maxImages; j++) {
+                const img = document.createElement('img');
+                img.src = defaultImages[j];
+                img.classList.add('preview-image');
+                imageDisplay.appendChild(img);
+            }
+        }
+    </script>
+
+</body>
+</html>

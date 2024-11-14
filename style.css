@@ -11,10 +11,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1e1e2f;
+    background-color: rgb(32, 34, 53);
     padding: 0.5rem 2rem;
     color: #fff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(3, 21, 59, 0.055);
   }
   
   /* Logo Styling */
@@ -44,7 +44,7 @@
     transition: color 0.3s ease;
   }
 
-  .navbar .nav-links a:hover {
+  .navbar .nav-links .anchor-style:hover {
     color: #00ccff;
   }
 
@@ -59,21 +59,13 @@
     transition: background-color 0.3s ease;
   }
 
-  .Subscri-btn{
-    background-color: #00ccff;
-    color: #1e1e2f;
-    padding: 0.5rem 1.2rem;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
 
   .Subscri-btn {
     background: linear-gradient(45deg, #ff5722, #ff9800);
     color: white;
-    padding: 12px 24px;
+    padding: 10px 18px;
     border: none;
+    font-weight: bold;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
@@ -88,6 +80,8 @@
 
   .navbar .sign-up:hover {
     background-color: #00b3e6;
+    color: #000;
+    transition: 0.4s;
   }
 
 
